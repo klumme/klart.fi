@@ -1,0 +1,18 @@
+---
+title: Home
+---
+<div class="intro">
+  <h1>Hi!</h1>
+
+  <p>This is the personal website of Kristian Lumme.</p>
+
+  <p>Reach me by email through first name dot last name at this domain.</p>
+</div>
+
+<h2>Writing</h2>
+
+<ul>
+  <% @items.find_all("/articles/*").each do |item| %>
+    <li><a href="<%= item.path %>"><%= item[:title] %></a> <span class="published">(published <%= item[:published] %>)</span></li>
+  <% end %>
+</ul>
