@@ -16,6 +16,7 @@ compile '/articles/**/*.md' do
   filter :hidden
   filter :kramdown, parse_block_html: true
   layout '/article.*'
+  layout '/default.*'
 
   if item.identifier =~ '**/index.*'
     write item.identifier.without_ext + '.html'

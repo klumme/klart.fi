@@ -1,21 +1,7 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title><%= @item[:title] %> | klart.fi</title>
-    <script src="/script.js"></script>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/code.css">
-
-    <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-  </head>
-  <body>
-    <main>
-      <%= link_to("Home", "/") %>
-      <hr>
-      <h1><%= @item[:title] %></h1>
-      <div class="published">Published <%= @item[:published] %></div>
-      <%= yield %>
-    </main>
-  </body>
-</html>
+<%= link_to("Home", "/") %>
+<hr>
+<h1><%= @item[:title] %></h1>
+<div class="published">Published <%= @item[:published] %></div>
+<%= yield %>
+<hr>
+<%= link_to("Home", "/") %>
