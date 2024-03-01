@@ -1,6 +1,7 @@
 ---
 title: A Slice of Zig, Part 1
-published: 2024-02-27
+created_at: 2024-02-27
+kind: article
 ---
 
 Lately, I've been playing around with the [Zig programming language](https://ziglang.org/). Zig is a general-purpose programming language, in many ways reminiscent of C, but with many of the possible  ways of shooting yourself in the foot removed. If you want to know more about the goals of Zig, along with its similarities to and differences from C, there are [many](https://ziglang.org/learn/overview/) [resources](https://ziglang.org/learn/why_zig_rust_d_cpp/) [available](https://www.youtube.com/watch?v=gn3YsZ6HUHw).
@@ -124,7 +125,7 @@ This method also takes a `self` parameter, and it returns a slice of `T`. This s
 
 ---
 
-We've covered quite a bit of ground just looking at how ArrayLists are initialized and deinitialized. We've seen a large part of the Zig language and touched on some of the topics that make it unique. In the next article, we'll take a look at how the list is actually used, and how this usage is implemented in the standard library.
+We've covered quite a bit of ground just looking at how ArrayLists are initialized and deinitialized. We've seen a large part of the Zig language and touched on some of the topics that make it unique. In the next article, we'll take a look at how the list is actually used, and how this usage is implemented in the standard library. You can subscribe to <a href="/feed.xml">this site's Atom feed</a> to be notified about any new articles in your RSS reader.
 
 note:I'm relatively new to Zig and low-level programming myself. It's possible that there are errors in this article, or that something isn't explained as clearly as it could be. If you find an error or if you have questions, please let me know and I'll do my best to update the article!endnote
 

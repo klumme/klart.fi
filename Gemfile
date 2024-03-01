@@ -17,3 +17,5 @@ end
 gem "nokogiri", "~> 1.16"
 
 gem "rouge", "~> 4.2"
+
+gem "builder", "~> 3.2"

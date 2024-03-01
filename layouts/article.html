@@ -1,7 +1,5 @@
-<%= link_to("Home", "/") %>
-<hr>
 <h1><%= @item[:title] %></h1>
-<div class="published">Published <%= @item[:published] %></div>
-<%= yield %>
-<hr>
-<%= link_to("Home", "/") %>
+<div class="published">Published <%= @item[:created_at] %></div>
+<article>
+  <%= yield %>
+</article>

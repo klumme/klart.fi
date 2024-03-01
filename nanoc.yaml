@@ -9,3 +9,6 @@ prune:
 data_sources:
   - type: filesystem
     encoding: utf-8
+
+# Required for Atom feed
+base_url: https://klart.fi

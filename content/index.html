@@ -13,6 +13,6 @@ title: Home
 
 <ul>
   <% @items.find_all("/articles/*").each do |item| %>
-    <li><a href="<%= item.path %>"><%= item[:title] %></a> <span class="published">(published <%= item[:published] %>)</span></li>
+    <li><a href="<%= item.path %>"><%= item[:title] %></a> <span class="published">(published <%= item[:created_at] %>)</span></li>
   <% end %>
 </ul>

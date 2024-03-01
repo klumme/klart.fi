@@ -25,6 +25,11 @@ compile '/articles/**/*.md' do
   end
 end
 
+compile '/feed.erb' do
+  filter :erb
+  write '/feed.xml'
+end
+
 passthrough '/**/*'
 
 layout '/**/*', :erb
