@@ -13,6 +13,7 @@ end
 
 compile '/articles/**/*.md' do
   filter :note
+  filter :hidden
   filter :kramdown, parse_block_html: true
   layout '/article.*'
 

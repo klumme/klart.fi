@@ -32,3 +32,13 @@ hr {
   border-top: 1px solid #ff9b53;
   border-bottom: 1px solid #ff9b53;
 }
+
+.notshown {
+  height: 0;
+  padding-top: 2rem;
+  background-color: gray;
+  overflow: hidden;
+}
+
+.shown {
+}

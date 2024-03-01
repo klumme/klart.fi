@@ -137,6 +137,7 @@ To finish up, I wanted to leave you with a suggestion for experimenting with the
 
 After covering dynamic memory allocation in ArrayList in the next article, we'll look at how to make the list grow as needed instead of being limited to a static size. For now, here's a simple, naive implementation of the exercise above:
 
+hidden:
 ~~~ zig
 const std = @import("std");
 const expectEqual = std.testing.expectEqual;
@@ -195,5 +196,6 @@ test "list holding struct" {
     try expectEqual(300, list.get(1).y);
 }
 ~~~
+endhidden
 
 Hope you got something useful out of this article! See you in the next one!
