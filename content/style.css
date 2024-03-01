@@ -22,13 +22,19 @@ hr {
   background-color: #ddd;
 }
 
-header, footer {
+header {
   max-width: 54rem;
   margin: 0 auto;
 }
 
+footer {
+  margin-bottom: 2.25rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
 article {
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 }
 
 .published {
