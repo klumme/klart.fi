@@ -5,7 +5,7 @@ body {
 }
 
 main {
-  max-width: 54rem;
+  max-width: 50rem;
   margin: 0 auto;
 }
 
@@ -14,17 +14,51 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+h1 {
+  font-size: 1.75rem;
+  color: #222;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 1.625rem;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+a {
+  color: #0069c6;
+  transition: color 0.2s;
+}
+a:hover {
+  color: black;
+}
+
+li {
+}
+
 hr {
   height: 1px;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 3em;
+  margin-bottom: 3em;
   border: none;
   background-color: #ddd;
 }
 
 header {
-  max-width: 54rem;
-  margin: 0 auto;
+  max-width: 50rem;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #ddd;
+}
+header a {
+  text-decoration: none;
+  color: #0069c6;
 }
 
 footer {
@@ -38,22 +72,37 @@ article {
 }
 
 .published {
-  color: #667;
+  color: #406175;
   font-style: italic;
 }
 
 .note {
+  padding-left: 1em;
+  padding-right: 1em;
   background-color: #fff9d8;
-  border-top: 1px solid #ff9b53;
-  border-bottom: 1px solid #ff9b53;
+  border-top: 1px solid #ffd8bb;
+  border-bottom: 1px solid #ffd8bb;
 }
 
-.notshown {
+.js .hidden {
   height: 0;
-  padding-top: 2rem;
-  background-color: gray;
   overflow: hidden;
+  border-top: 3px solid #333;
+  border-bottom: 3px solid #333;
 }
 
-.shown {
+.js .show {
+  color: #333;
+  font-style: italic;
+}
+
+.js .shown {
+  height: auto;
+}
+
+.highlighter-rouge {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-left: 3px solid #eee;
+  padding-left: 1em;
 }
