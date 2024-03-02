@@ -1,6 +1,6 @@
 ---
 title: A Slice of Zig, Part 1
-created_at: 2024-02-27
+created_at: 2024-03-02
 kind: article
 ---
 
