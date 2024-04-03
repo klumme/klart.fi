@@ -233,8 +233,6 @@ fn MyList(T: type) type {
             self.length += 1;
         }
 
-        // Similarly, we don't check that the index is valid for this list. Again,
-        // this will be fixed in the next article.
         pub fn get(self: *Self, index: usize) T {
             return self.items[index];
         }
