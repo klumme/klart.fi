@@ -12,7 +12,7 @@ title: Home
 <h2>Writing</h2>
 
 <ul>
-  <% @items.find_all("/articles/*").each do |item| %>
+  <% published_articles.each do |item| %>
     <li><a href="<%= item.path %>"><%= item[:title] %></a> <span class="published">(published <%= item[:created_at] %>)</span></li>
   <% end %>
 </ul>

@@ -12,6 +12,10 @@ compile '/**/*.html' do
 end
 
 compile '/articles/**/*.md' do
+  if item[:status] == "draft"
+    write nil
+    next
+  end
   filter :note
   filter :hidden
   filter :kramdown, parse_block_html: true
