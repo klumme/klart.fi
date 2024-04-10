@@ -39,7 +39,7 @@ test "basic functionality" {
 
 Here, the `test` declaration has a short description of the test followed by a block containing the code actually performing the test. We won't go into detail of how the test runner works but instead move on to the code dealing with the ArrayList itself. The two first lines inside the block handle initializing and deinitializing the list, after which there's code (omitted here) to add items to the list, retrieve items from it, and make sure the results are as expected.
 
-note:As I was writing this article, I found that just dealing with the initialization and deinitialization of the list provided plenty of material for one article. In a following article, we'll look at how the list is actually used and how that usage is implemented.endnote
+note:As I was writing this article, I found that just dealing with the initialization and deinitialization of the list provided plenty of material for one article. [In the next part](/articles/a-slice-of-zig-2), we look at how the list is actually used and how that usage is implemented.endnote
 
 Looking at the first two lines inside the block, you might be able to guess what's going on, even if you're fuzzy on the details: it looks like we're initializing an ArrayList meant to hold signed 32-bit integers, passing it something called an allocator. We then set it up to be deinitialized later.
 
@@ -155,7 +155,7 @@ Recall that `items` is a slice of `T` — a pointer into some memory holding ite
 
 ### Deinitializing the struct
 
-Reiterating, back in the test we called `ArrayList(i32)` and got back a type representing a list holding integers. We then called `init(std.testing.allocator)` on this, getting back an *instance* of that type. We can now use this list: add items to it, retrieve items, remove them and so on. We'll look at this usage in another article. For now, let's see how the list is *deinitialized*. This happens through the `defer list.deinit()` line in the test.
+Reiterating, back in the test we called `ArrayList(i32)` and got back a type representing a list holding integers. We then called `init(std.testing.allocator)` on this, getting back an *instance* of that type. We can now use this list: add items to it, retrieve items, remove them and so on. The next article covers this usage. For now, let's see how the list is *deinitialized*. This happens through the `defer list.deinit()` line in the test.
 
 ~~~ zig
 return struct {
@@ -192,7 +192,7 @@ This method also takes a `self` parameter, and it returns a slice of `T`. This s
 
 ## Conclusion
 
-We've covered quite a bit of ground just looking at how ArrayLists are initialized and deinitialized. We've seen a large part of the Zig language and touched on some of the topics that make it unique. In the next article, we'll take a look at how the list is actually used, and how this usage is implemented in the standard library. You can subscribe to <a href="/feed.xml">this site's Atom feed</a> to be notified about any new articles in your RSS reader.
+We've covered quite a bit of ground just looking at how ArrayLists are initialized and deinitialized. We've seen a large part of the Zig language and touched on some of the topics that make it unique. [In the next article](/articles/a-slice-of-zig-2), we'll take a look at how the list is actually used, and how this usage is implemented in the standard library. You can subscribe to <a href="/feed.xml">this site's Atom feed</a> to be notified about any new articles in your RSS reader.
 
 note:I'm relatively new to Zig and low-level programming myself. It's possible that there are errors in this article, or that something isn't explained as clearly as it could be. If you find an error or if you have questions, <a href="/">please let me know</a> and I'll do my best to update the article!endnote
 
@@ -268,4 +268,4 @@ test "list holding struct" {
 ~~~
 endhidden
 
-Hope you got something useful out of this article! See you in the next one!
+Hope you got something useful out of this article! See you in [the next one](/articles/a-slice-of-zig-2)!

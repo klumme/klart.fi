@@ -1,10 +1,10 @@
 ---
 title: A Slice of Zig, Part 2
-created_at: 2024-04-09
+created_at: 2024-04-10
 kind: article
 ---
 
-In "A Slice of Zig, Part 1", we started on a tour of Zig, examining the language by looking at the implementation of ArrayList in the standard library — a "vertical slice", if you will. We covered how initialization and deinitialization of the ArrayList is implemented, but didn't go into how the actual list operations work. This article continues where the previous one left off, examining how the ArrayList is actually used and how that usage is implemented behind the scenes.
+In [A Slice of Zig, Part 1](/articles/a-slice-of-zig-1), we started on a tour of Zig, examining the language by looking at the implementation of ArrayList in the standard library — a "vertical slice", if you will. We covered how initialization and deinitialization of the ArrayList is implemented, but didn't go into how the actual list operations work. This article continues where the previous one left off, examining how the ArrayList is actually used and how that usage is implemented behind the scenes.
 
 As in the previous article, the aim here is not to explain every part of the Zig language encountered or to teach you Zig from the bottom up; rather, it's to provide an overview of Zig, pointing out some of its unique features and showing some examples of how the language constructs come together in real-world code.
 
@@ -349,7 +349,7 @@ In this article, we've looked at how appending and inserting elements works in t
 
 ### Exercise
 
-At the end of the last article, I suggested implementing your own simple list as a way to acquire a better understanding of these concepts. The exercise described a generic list backed by a fixed-size array, with methods for appending and for retrieving the item at a specific index. After having seen how the ArrayList manages memory, we can extend our requirements and make our list size dynamic:
+[At the end of the last article](/articles/a-slice-of-zig-1/#exercise), I suggested implementing your own simple list as a way to acquire a better understanding of these concepts. The exercise described a generic list backed by a fixed-size array, with methods for appending and for retrieving the item at a specific index. After having seen how the ArrayList manages memory, we can extend our requirements and make our list size dynamic:
 
 - Make the list take an allocator in an `init` method, storing it in a field (in the previous article, we looked at how ArrayList does this)
   - Update the old tests to pass the allocator to the list (use `std.testing.allocator` to catch memory leaks)
