@@ -205,6 +205,8 @@ To finish up, I wanted to leave you with a suggestion for experimenting with the
 - Add some tests for your list in the same file
 - Make the list generic so that it can hold any type
 
+note:For your `append` method, you'll need to take *a pointer to `Self`* as a parameter (`*Self`), rather than just `Self`. You can call the method the same way as before, Zig will handle the pointer automatically. More on this in the next article.endnote
+
 After covering dynamic memory allocation in ArrayList in the next article, we'll look at how to make the list grow as needed instead of being limited to a static size. For now, here's a simple, naive implementation of the exercise above:
 
 hidden:
@@ -228,12 +230,12 @@ fn MyList(T: type) type {
 
         // Right now, it's possible to add more elements than the list can hold,
         // which will result in a runtime error. We'll fix this in the next article.
-        pub fn add(self: *Self, item: T) void {
+        pub fn append(self: *Self, item: T) void {
             self.items[self.length] = item;
             self.length += 1;
         }
 
-        pub fn get(self: *Self, index: usize) T {
+        pub fn get(self: *const Self, index: usize) T {
             return self.items[index];
         }
     };
@@ -242,9 +244,9 @@ fn MyList(T: type) type {
 test "basic list usage" {
     var list = MyList(i32).init();
 
-    list.add(5);
-    list.add(42);
-    list.add(20_000);
+    list.append(5);
+    list.append(42);
+    list.append(20_000);
 
     try expectEqual(5, list.get(0));
     try expectEqual(42, list.get(1));
@@ -258,8 +260,8 @@ test "list holding struct" {
     };
 
     var list = MyList(Point).init();
-    list.add(.{ .x = 100, .y = 200 });
-    list.add(.{ .x = 150, .y = 300 });
+    list.append(.{ .x = 100, .y = 200 });
+    list.append(.{ .x = 150, .y = 300 });
 
     try expectEqual(300, list.get(1).y);
 }
